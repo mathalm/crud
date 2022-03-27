@@ -1,0 +1,73 @@
+.receber-planilha{
+  padding: 70px 0 0 70px;
+  display: flex;
+}
+
+.lado-esquerdo{
+  width: 40%;
+  height: 89vh;
+  background-color: #7d9470fd;
+}
+.titulo-funcionalidade{
+  color: #f0f0f0;
+  font-size: 16px;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.438);
+}
+.div-input{
+  padding: 20px 0px 0 40px;
+  margin-bottom: 10px;
+}
+.div-token{
+  height: 100px;
+  padding: 20px 0px 0 40px;
+}
+.div-botoes{
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div-botoes div{
+  width: 420px;
+  display: flex;
+  justify-content: space-between;
+}
+.botao{
+  background-color: rgb(137, 218, 191);
+  height: 34px;
+  color: black;
+  font-size: 13px;
+}
+.botao:hover{
+  background-color: rgb(117, 190, 166);
+  color: black;
+}
+.retorno-requisicao{
+  padding: 15px 0 0 40px;
+}
+.retorno-requisicao div{
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 33vh;
+  border-radius: 5px;
+}
+/* --------------------------------------------------------------- */
+.lado-direito{
+  background-color: #7d9470fd;
+  height: 89vh;
+  width: 60%;
+  margin: 0;
+}
+.lado-direito p{
+  color: #f0f0f0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.514);
+  font-size: 30px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0; 
+}
+
+
+
+

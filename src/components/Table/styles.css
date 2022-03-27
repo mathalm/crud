@@ -1,0 +1,36 @@
+.div-alinha-table{
+  display: flex;
+  justify-content: center;
+  height: 78vh;
+  border-radius: 10px;
+}
+.div-border{
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  height: 100%;
+  width: 50vw;
+  background-color: aqua;
+}
+.table{
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  margin: 0;
+}
+.linha-cabecalho{
+  position: sticky;
+  top: 0;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.411);
+  background-color: rgb(137, 218, 191);
+  
+}
+.linha-cabecalho th{
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+.tr{
+  border-right: solid 1px 1px 1px black;
+  
+}
