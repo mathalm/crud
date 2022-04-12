@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as xlsx from 'xlsx/xlsx.mjs';
 import Botoes from '../Botoes';
 import LadoDireito from '../LadoDireito';
+import Requisicao from './Requisicao';
 import './styles.css'
 
 function Atualizar() {
@@ -9,6 +10,7 @@ function Atualizar() {
 
   const [items, setItems] = useState([]);
   const [keys, setKeys] = useState([]);
+  const [tokenCliente, setTokenCliente] = useState('');
 
   const readExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -35,6 +37,8 @@ function Atualizar() {
 
     });
 
+    
+
   };
 
   const handleReceberPlanilha = (e) => {
@@ -50,6 +54,10 @@ function Atualizar() {
       readExcel(file);
 
     }
+    
+  }
+  const handleReceberToken = (e) =>{
+    setTokenCliente(e.target.value);
   }
 
 
@@ -64,10 +72,10 @@ function Atualizar() {
         </div>
         <div className='div-token'>
           <p className='titulo-funcionalidade'>Token do cliente:</p>
-          <input type="text" className="form-control" placeholder="Token do cliente" aria-label="Server" />
+          <input type="text" className="form-control" placeholder="Token do cliente" aria-label="Server" onChange={handleReceberToken} />
         </div>
         <div className='div-botoes'>
-          <Botoes setItems={setItems} setKeys={setKeys} items={items} />
+          <Botoes setItems={setItems} setKeys={setKeys} items={items} tokenCliente={tokenCliente} />
         </div>
         <div className='retorno-requisicao'>
           <p className='titulo-funcionalidade'>Retorno da requisição:</p>
@@ -76,6 +84,7 @@ function Atualizar() {
         </div>
       </div>
       <LadoDireito items={items} keys={keys} />
+      {/* <Requisicao items={items} keys={keys} /> */}
     </div>
   );
 }

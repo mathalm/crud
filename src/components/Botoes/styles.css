@@ -1,0 +1,11 @@
+.esconder-modal-certeza{
+  display: none;
+}
+.aparecer-modal-certeza{
+  display: block;
+  position: absolute;
+  left: 35vw;
+  bottom: 30vh; 
+  width: 300px;
+  height: 300px;
+}
