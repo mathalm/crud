@@ -18,22 +18,15 @@ function Botoes({ setItems, setKeys, items, tokenCliente }) {
     document.getElementById('formFile').value = ''
 
   }
-  // const handleValidarCerteza = () => {
-  //   setCerteza(true);
-  //   console.log(certeza);
-  // }
-  // const handleFecharModal = () => {
-  //   setCerteza(false);
-  // }
-  const handleAtualizarLeads = async () => {
+  const handlePegarLeads = async () => {
     const api = axios.create({
-      baseURL: "https://api.exactspotter.com/v3/"
+      baseURL: "https://api.exactsales.com.br/v3"
     })
     const config ={
-      headers: { "Content-Type": "application/json", "token_exact": "ba6d401d-2b9d-4d44-8374-40de572e6945" }
+      headers: { "Content-Type": "application/json", "token_exact": "a042af31-8bf1-42df-a545-8a92650b0eac" }
     }
-        
-    await api.get("Leads",config)
+
+    await api.get("/Leads",config)
       .then(({data}) => {
         console.log(data);
       })
@@ -42,25 +35,39 @@ function Botoes({ setItems, setKeys, items, tokenCliente }) {
 
 
 
-  // const  handlePegarLeads = () => {
-  //   const myHeaders = new Headers({
-  //     'Content-Type': 'application/json',
-  //     'token_exact': 'ba6d401d-2b9d-4d44-8374-40de572e6945'
-  //   })
-  //   const metodo = {
-  //     method: 'GET',
-  //     headers: myHeaders,
-  //     mode: "no-cors"
-  //   }
+  // const handlePegarLeads = () => {
+    // var myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
+    // myHeaders.append("token_exact", "a042af31-8bf1-42df-a545-8a92650b0eac");
 
-  //   fetch(`https://api.exactspotter.com/v3/Leads`, metodo)
-  //   .then(function(response){
-  //     const dados = response.json()
-  //     setLeads(dados);
-  //   });
-  //   console.log(leads);
+    // var metodo = {
+    //   method: 'GET',
+    //   headers: myHeaders,
+    //   redirect: 'follow'
+    // }
 
+    // fetch("https://api.exactsales.com.br/v3/Leads", metodo)
+    //   .then(response => response.text())
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log('error', error));
+
+    // var myHeaders = new Headers();
+    // myHeaders.append("Content-Type", "application/json");
+    // myHeaders.append("token_exact", "a506d2d2-6045-485d-a41e-ee22c3af75a3");
+
+    // var requestOptions = {
+    //   method: 'GET',
+    //   headers: myHeaders,
+    //   redirect: 'follow'
+    // };
+
+    // fetch("https://api.exactspotter.com/v3/Leads", requestOptions)
+    //   .then(response => response.text())
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log('error', error));
+    // console.log(leads);
   // }
+
 
 
 
@@ -68,7 +75,7 @@ function Botoes({ setItems, setKeys, items, tokenCliente }) {
     <div>
       <button className="btn btn-outline-secondary botao" type="button" id="inputGroupFileAddon04" onClick={handleEnvioDoArquivo} >Ver arquivo</button>
       <button className="btn btn-outline-secondary botao" type="button" id="inputGroupFileAddon04" onClick={handleLimparTabela} >Limpar</button>
-      <button className="btn btn-outline-secondary botao" type="button" id="inputGroupFileAddon04" onClick={handleAtualizarLeads} >Atualizar leads</button>
+      <button className="btn btn-outline-secondary botao" type="button" id="inputGroupFileAddon04" onClick={handlePegarLeads} >Atualizar leads</button>
     </div>
   );
 }
