@@ -51,6 +51,8 @@
   width: 100%;
   height: 33vh;
   border-radius: 5px;
+  overflow-y: scroll;
+  overflow-x: scroll;
 }
 /* --------------------------------------------------------------- */
 .lado-direito{
@@ -68,6 +70,13 @@
   margin-bottom: 0; 
 }
 
-
+.retornoRequisicao{
+  color: black;
+  font-size: 10px;
+  word-wrap: break-word;
+  width: 100%;
+  padding: 3px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.349);
+}
 
 

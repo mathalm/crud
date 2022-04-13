@@ -29,13 +29,14 @@ function Table({ items, keys }) {
         <table className="table table-hover">
           <thead className='thead'>
             <tr className='linha-cabecalho'>
+            <th>N°</th>
               {renderizarCabecalho(keys)}
             </tr>
           </thead>
           <tbody className='tbody' >
             {items.map((item, index) => {
               return (
-                <tr className='tr' key={index}>{renderizarCelulas(item)}</tr>
+                <tr className='tr' key={index}><td>{index}</td>{renderizarCelulas(item)}</tr>
               )
             })}
           </tbody>

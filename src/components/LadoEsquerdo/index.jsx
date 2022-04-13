@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import * as xlsx from 'xlsx/xlsx.mjs';
 import Botoes from '../Botoes';
 import LadoDireito from '../LadoDireito';
-import Requisicao from './Requisicao';
 import './styles.css'
 
 function Atualizar() {
@@ -11,6 +10,7 @@ function Atualizar() {
   const [items, setItems] = useState([]);
   const [keys, setKeys] = useState([]);
   const [tokenCliente, setTokenCliente] = useState('');
+  const [retornoDaRequisicao, setRetornoDaRequisicao] = useState([]);
 
   const readExcel = (file) => {
     const promise = new Promise((resolve, reject) => {
@@ -37,7 +37,7 @@ function Atualizar() {
 
     });
 
-    
+
 
   };
 
@@ -45,18 +45,18 @@ function Atualizar() {
     let extensãoPermitida = /(.XLSX)$/i;
     if (!extensãoPermitida.exec(e.target.value)) {
       window.alert('Deve ser inserido arquivo do tipo .xlsx');
-        setItems([]);
-        setKeys([]);
-        document.getElementById('formFile').value = '';
+      setItems([]);
+      setKeys([]);
+      document.getElementById('formFile').value = '';
 
     } else {
       const file = e.target.files[0];
       readExcel(file);
 
     }
-    
+
   }
-  const handleReceberToken = (e) =>{
+  const handleReceberToken = (e) => {
     setTokenCliente(e.target.value);
   }
 
@@ -75,16 +75,22 @@ function Atualizar() {
           <input type="text" className="form-control" placeholder="Token do cliente" aria-label="Server" onChange={handleReceberToken} />
         </div>
         <div className='div-botoes'>
-          <Botoes setItems={setItems} setKeys={setKeys} items={items} tokenCliente={tokenCliente} />
+          <Botoes setItems={setItems} setKeys={setKeys} items={items} tokenCliente={tokenCliente} setRetornoDaRequisicao={setRetornoDaRequisicao} retornoDaRequisicao={retornoDaRequisicao} />
         </div>
         <div className='retorno-requisicao'>
-          <p className='titulo-funcionalidade'>Retorno da requisição:</p>
-          <div>
+          <div  className='retorno-requisicao-div'>
+           {retornoDaRequisicao.map((retorno, index) => {
+             console.log(retornoDaRequisicao);
+            return (
+              <p className='retornoRequisicao' key={index}>{retorno}</p> 
+              )
+              
+            })}
+          
           </div>
         </div>
       </div>
       <LadoDireito items={items} keys={keys} />
-      {/* <Requisicao items={items} keys={keys} /> */}
     </div>
   );
 }

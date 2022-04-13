@@ -1,6 +1,6 @@
-import Atualizar from "./components/Atualizar";
+import Atualizar from "../components/LadoEsquerdo/index";
 import './app.css';
-import Home from "./templates/Home";
+import Home from "../templates/Home";
 
 
 function App() {
